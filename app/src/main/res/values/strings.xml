@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">quizApp</string>
+    <string name="btnText">SUBMIT</string>
+    <string name="textHint">Tu wpisz odpowiedz</string>
+    <string name="your_result">YOUR RESULT</string>
+    <string name="firstPage">\?/4</string>
+    <string name="questionMark">\?</string>
+    <string name="question1">how many horns a unicorn has?</string>
+    <string name="answear1q1">1 horn</string>
+    <string name="answear2q1">2 horns</string>
+    <string name="answear3q1">3 horns</string>
+    <string name="question2">which colors are the colors of the rainbow?</string>
+    <string name="answear1q2">Green</string>
+    <string name="answear2q2">Purple</string>
+    <string name="answear3q2">Brown</string>
+    <string name="answear4q2">Black</string>
+    <string name="question3">does the unicorn like a rainbow?</string>
+    <string name="answear1q3">YES</string>
+    <string name="answear2q3">NO</string>
+    <string name="answear3q3">He prefers to eat mushrooms</string>
+    <string name="question4">how many legs a unicorn has?</string>
+</resources>

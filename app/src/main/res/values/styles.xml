@@ -1,0 +1,38 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="VPStyle" parent="AppTheme">
+        <item name="android:textColor">@color/textColor</item>
+        <item name="colorControlNormal">@color/textColor</item>
+        <item name="android:textSize">@dimen/normalTextSize</item>
+    </style>
+    <style name="radioButtonsStyle" parent="VPStyle">
+        <item name="android:layout_marginBottom">@dimen/marginSmall</item>
+    </style>
+
+    <style name="BTNStyle" parent="AppTheme">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:layout_marginBottom">@dimen/marginMedium</item>
+        <item name="android:paddingLeft">@dimen/marginMedium</item>
+        <item name="android:paddingRight">@dimen/marginMedium</item>
+        <item name="android:background">@drawable/my_button</item>
+        <item name="android:text">@string/btnText</item>
+    </style>
+    <style name="textQuestionStyle" parent="AppTheme">
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginBottom">@dimen/marginBig</item>
+        <item name="android:layout_marginTop">@dimen/marginBig</item>
+        <item name="android:layout_marginRight">@dimen/marginBig</item>
+        <item name="android:layout_marginLeft">@dimen/marginBig</item>
+
+
+    </style>
+
+</resources>

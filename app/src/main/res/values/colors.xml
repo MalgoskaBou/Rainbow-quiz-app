@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2C3C49</color>
+    <color name="colorPrimaryDark">#1f2b35</color>
+    <color name="colorAccent">#2D9CDB</color>
+
+    <color name="textColor">#efefef</color>
+    <color name="bckPBColor">#40efefef</color>
+
+
+</resources>

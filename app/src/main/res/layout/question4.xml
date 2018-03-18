@@ -1,0 +1,44 @@
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/VPStyle"
+        >
+
+        <TextView
+            android:id="@+id/questionTxt4"
+            style="@style/textQuestionStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/question4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <EditText
+            android:id="@+id/myEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/textHint"
+            android:layout_margin="@dimen/marginBig"
+            android:textColor="@color/textColor"
+            android:textColorHint="@color/bckPBColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/questionTxt4" />
+
+
+        <Button
+            android:id="@+id/nextQuestion"
+            style="@style/BTNStyle"
+            android:layout_marginTop="@dimen/marginBig"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/myEditText" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

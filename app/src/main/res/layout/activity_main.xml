@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<android.support.constraint.ConstraintLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.udacityquiz.android.quizapp.MainActivity"
+    android:theme="@style/VPStyle"
+    >
+
+
+    <io.netopen.hotbitmapgg.library.view.RingProgressBar
+        android:id="@+id/progressCountdown"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:max="100"
+        app:ringColor="@color/bckPBColor"
+        app:ringProgressColor="@color/colorAccent"
+        app:ringWidth="5dp"
+        app:style="STROKE"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/myResult"
+        android:text="@string/questionMark"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/bigTextSize"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/yourResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/your_result"
+        app:layout_constraintBottom_toTopOf="@+id/myResult"
+        app:layout_constraintEnd_toEndOf="@+id/myResult"
+        app:layout_constraintStart_toStartOf="@+id/myResult" />
+
+    <TextView
+        android:id="@+id/questionCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/firstPage"
+        app:layout_constraintEnd_toEndOf="@+id/myResult"
+        app:layout_constraintStart_toStartOf="@+id/myResult"
+        app:layout_constraintTop_toBottomOf="@+id/myResult" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:id = "@+id/questionsHere"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline2" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/question1"
+                android:id="@+id/question1"
+                />
+
+            <include layout="@layout/question2"
+                android:id="@+id/question2"/>
+
+            <include layout="@layout/question3"
+                android:id="@+id/question3"/>
+
+            <include layout="@layout/question4"
+                android:id="@+id/question4"/>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+</android.support.constraint.ConstraintLayout>
+</layout>

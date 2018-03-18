@@ -1,0 +1,52 @@
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/VPStyle"
+        >
+
+        <TextView
+            android:id="@+id/questionTxt3"
+            style="@style/textQuestionStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/question3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/radioButtonGroup3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginBig"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/questionTxt3">
+
+            <android.support.v7.widget.AppCompatRadioButton
+                android:id="@+id/radioButton1Q3"
+                style="@style/radioButtonsStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/answear1q3" />
+
+            <android.support.v7.widget.AppCompatRadioButton
+                android:id="@+id/radioButton2Q3"
+                style="@style/radioButtonsStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/answear2q3" />
+
+            <android.support.v7.widget.AppCompatRadioButton
+                android:id="@+id/radioButton3Q3"
+                style="@style/VPStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/answear3q3" /><!-- why I can't use theme for textColor?-->
+
+
+        </RadioGroup>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
