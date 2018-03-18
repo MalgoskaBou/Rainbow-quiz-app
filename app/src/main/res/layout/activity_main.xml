@@ -11,23 +11,16 @@
     android:theme="@style/VPStyle"
     >
 
-
-    <io.netopen.hotbitmapgg.library.view.RingProgressBar
-        android:id="@+id/progressCountdown"
+    <com.hookedonplay.decoviewlib.DecoView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        android:id="@+id/progressCountdown"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:max="100"
-        app:ringColor="@color/bckPBColor"
-        app:ringProgressColor="@color/colorAccent"
-        app:ringWidth="5dp"
-        app:style="STROKE"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        android:layout_margin="@dimen/marginSmall"
         />
 
     <TextView

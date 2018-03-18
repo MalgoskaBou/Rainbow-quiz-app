@@ -1,38 +1,40 @@
 package com.udacityquiz.android.quizapp;
 
-import android.animation.ObjectAnimator;
 import android.databinding.DataBindingUtil;
+import android.graphics.Color;
+import android.graphics.PointF;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.Toast;
-
+import com.hookedonplay.decoviewlib.DecoView;
+import com.hookedonplay.decoviewlib.charts.SeriesItem;
+import com.hookedonplay.decoviewlib.events.DecoEvent;
 import com.udacityquiz.android.quizapp.databinding.ActivityMainBinding;
-import io.netopen.hotbitmapgg.library.view.RingProgressBar;
 
 
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding myActivity;
     int points;
+    DecoView awesomeProgressbar;
+    int green, blue, red, yellow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         myActivity= DataBindingUtil.setContentView(this, R.layout.activity_main);
 
+        awesomeProgressbar = myActivity.progressCountdown;
+        AwesomePBInitialize();
+
         // Check whether we're recreating a previously destroyed instance
         if (savedInstanceState != null) {
             // Restore value from saved state
             points= savedInstanceState.getInt("POINTS");
             DisplayResult(points);
-
-        } else {
-            //initial status of the loading bar
-            myActivity.progressCountdown.setProgress(0);
         }
-
 
         //pressing the submit button
         myActivity.question4.nextQuestion.setOnClickListener(new View.OnClickListener() {
@@ -71,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void DisplayResult(int result){
+
         //to display responses in toast and under percentage points
         String howManyQuestionCorrect = result+"/4";
         myActivity.questionCounter.setText(howManyQuestionCorrect);
@@ -79,24 +82,67 @@ public class MainActivity extends AppCompatActivity {
         //calculating the percentage of correct answers, bar animation and display in the text field
         int percent = (result*100)/4;
 
-        setProgressMax(myActivity.progressCountdown,100);
-        setProgressAnimate(myActivity.progressCountdown,percent);
+        awesomeProgressbar.addEvent(new DecoEvent.Builder(percent).setIndex(green).setDuration(1000).build());
+        awesomeProgressbar.addEvent(new DecoEvent.Builder(percent).setIndex(yellow).setDuration(1100).build());
+        awesomeProgressbar.addEvent(new DecoEvent.Builder(percent).setIndex(blue).setDuration(1200).build());
+        awesomeProgressbar.addEvent(new DecoEvent.Builder(percent).setIndex(red).setDuration(1300).build());
 
         String percentResult = percent+"%";
         myActivity.myResult.setText(percentResult);
     }
 
-    //animation of the progress bar
-    private void setProgressMax(RingProgressBar pb, int max) {
-        pb.setMax(max * 100);
-    }
+    private void AwesomePBInitialize(){
+        float thickness = 15;
+        float numberOfColours = 4;
 
-    private void setProgressAnimate(RingProgressBar pb, int progressTo)
-    {
-        ObjectAnimator animation = ObjectAnimator.ofInt(pb, "progress", pb.getProgress(), progressTo * 100);
-        animation.setDuration(500);
-        animation.setInterpolator(new DecelerateInterpolator());
-        animation.start();
+        // Create background
+        SeriesItem bck = new SeriesItem.Builder(Color.argb(20, 218, 218, 218))
+                .setRange(0, 100, 100)
+                .setLineWidth(numberOfColours*thickness)
+                .setInset(new PointF(2*thickness, 2*thickness))
+                .build();
+        awesomeProgressbar.addSeries(bck);
+
+        //Create colours of rainbow
+        SeriesItem blueItem = new SeriesItem.Builder(Color.argb(255, 10, 179, 228))
+                .setRange(0, 100, 0)
+                .setInterpolator (new DecelerateInterpolator ())
+                .setSpinDuration(3000)
+                .setShowPointWhenEmpty(false)
+                .setLineWidth(thickness)
+                .setInset(new PointF(thickness, thickness))
+                .build();
+
+        SeriesItem greenItem = new SeriesItem.Builder(Color.argb(255, 152, 255, 102))
+                .setRange(0, 100, 0)
+                .setInterpolator (new DecelerateInterpolator ())
+                .setSpinDuration(3000)
+                .setShowPointWhenEmpty(false)
+                .setLineWidth(thickness)
+                .build();
+
+        SeriesItem yellowItem = new SeriesItem.Builder(Color.argb(255, 255, 255, 102))
+                .setRange(0, 100, 0)
+                .setInterpolator (new DecelerateInterpolator ())
+                .setSpinDuration(3000)
+                .setShowPointWhenEmpty(false)
+                .setLineWidth(thickness)
+                .setInset(new PointF(thickness*3, thickness*3))
+                .build();
+
+        SeriesItem redItem = new SeriesItem.Builder(Color.argb(255, 255, 102, 152))
+                .setRange(0, 100, 0)
+                .setInterpolator (new DecelerateInterpolator ())
+                .setSpinDuration(3000)
+                .setShowPointWhenEmpty(false)
+                .setLineWidth(thickness)
+                .setInset(new PointF(thickness*2, thickness*2))
+                .build();
+
+        green = awesomeProgressbar.addSeries(greenItem);
+        yellow = awesomeProgressbar.addSeries(yellowItem);
+        red = awesomeProgressbar.addSeries(redItem);
+        blue = awesomeProgressbar.addSeries(blueItem);
     }
 
     @Override
