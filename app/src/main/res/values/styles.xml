@@ -20,8 +20,10 @@
     <style name="BTNStyle" parent="AppTheme">
         <item name="android:textColor">@color/colorAccent</item>
         <item name="android:layout_marginBottom">@dimen/marginMedium</item>
-        <item name="android:paddingLeft">@dimen/marginMedium</item>
-        <item name="android:paddingRight">@dimen/marginMedium</item>
+        <item name="android:paddingLeft">@dimen/marginBig</item>
+        <item name="android:paddingRight">@dimen/marginBig</item>
+        <item name="android:paddingBottom">@dimen/marginMedium</item>
+        <item name="android:paddingTop">@dimen/marginMedium</item>
         <item name="android:background">@drawable/my_button</item>
         <item name="android:text">@string/btnText</item>
     </style>

@@ -7,5 +7,8 @@
     <color name="textColor">#efefef</color>
     <color name="bckPBColor">#40efefef</color>
 
+    <color name="rainbowGreen">#98FF66</color>
+    <color name="rainbowRed">#FF6698</color>
+
 
 </resources>
